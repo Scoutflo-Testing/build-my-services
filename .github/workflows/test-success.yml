@@ -1,0 +1,11 @@
+name: Test Success
+
+on:
+  workflow_dispatch:
+
+jobs:
+  success-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo success
+        run: echo "Success ✅"
