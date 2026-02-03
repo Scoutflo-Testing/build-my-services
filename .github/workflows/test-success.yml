@@ -15,6 +15,7 @@ jobs:
           curl -X POST https://api.app-server-pp.scoutflo.com/v1/autocd/trigger \
             -H "Authorization: Bearer ${{ secrets.SCOUTFLO_WEBHOOK_TOKEN }}" \
             -H "Content-Type: application/json" \
+            -H "Origin: https://app-pp.scoutflo.com/" \
             -d '{
               "provider": "github",
               "repo": "${{ github.repository }}",
