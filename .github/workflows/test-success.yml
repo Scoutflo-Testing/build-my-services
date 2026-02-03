@@ -1,15 +1,14 @@
 name: Test Success
-
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+      - main
 jobs:
   success-job:
     runs-on: ubuntu-latest
     steps:
       - name: Echo success
         run: echo "Success ✅"
-
       - name: Notify Scoutflo AutoCD
         run: |
           curl -X POST https://api.app-server-pp.scoutflo.com/v1/autocd/trigger \
@@ -17,13 +16,15 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "provider": "github",
-              "service_name": "autocd-test-1",
-              "cloud_connection_id": "cloud-credentials-4a9ecee0-f9e0-4331-bab6-ed5ba76d2c5a",
-              "registry": "AWS_ECR",
-              "image_repo": "welcome-scoutflo",
-              "image_tag": "${{ github.sha }}",
-              "image_digest": "sha256:REPLACE_ME",
               "repo": "${{ github.repository }}",
               "branch": "${{ github.ref_name }}",
-              "commit": "${{ github.sha }}"
+              "commit": "${{ github.sha }}",
+              "images": [
+                {
+                  "registry_provider": "AWS_ECR",
+                  "image_repo": "welcome-scoutflo",
+                  "image_tag": "1.0.0",
+                  "image_digest": "sha256:faa397bdff7f2e5a6d05719524aa14ab216190e4b39ca226e7b74b0c4d99d9cf"
+                }
+              ]
             }'
