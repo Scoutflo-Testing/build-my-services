@@ -45,7 +45,7 @@ spec:
       serviceAccountName: scoutflo-sa-autocd-test-1-xgra
       containers:
         - name: autocd-test-1-xgra-container
-          image: 296062577626.dkr.ecr.ap-south-1.amazonaws.com/welcome-scoutflo:69.0.0
+          image: 296062577626.dkr.ecr.ap-south-1.amazonaws.com/welcome-scoutflo:71.0.0
           ports:
             - containerPort: 80
           resources:
