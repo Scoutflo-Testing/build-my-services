@@ -12,7 +12,7 @@ jobs:
         run: echo "Success ✅"
       - name: Notify Scoutflo AutoCD
         run: |
-          curl -X POST https://api.app-server.scoutflo.com/v1/autocd/trigger \
+          curl -X POST https://api.app-server-pp.scoutflo.com/v1/autocd/trigger \
             -H "Authorization: Bearer ${{ secrets.SCOUTFLO_WEBHOOK_TOKEN }}" \
             -H "Content-Type: application/json" \
             -H "Origin: https://app-pp.scoutflo.com" \
@@ -25,7 +25,7 @@ jobs:
                 {
                   "registry_provider": "AWS_ECR",
                   "image_repo": "welcome-scoutflo",
-                  "image_tag": "69.0.0",
+                  "image_tag": "71.0.0",
                   "image_digest": "sha256:faa397bdff7f2e5a6d05719524aa14ab216190e4b39ca226e7b74b0c4d99d9cf"
                 }
               ]
