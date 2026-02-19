@@ -19,7 +19,7 @@ jobs:
             -d '{
               "provider": "github",
               "repo": "${{ github.repository }}",
-              "branch": "${{ github.ref_name }}",
+              "branch": "autooo",
               "commit": "${{ github.sha }}",
               "images": [
                 {
