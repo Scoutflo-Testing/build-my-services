@@ -45,7 +45,7 @@ spec:
       serviceAccountName: scoutflo-sa-autocd-qa-service-2-2tiax
       containers:
         - name: autocd-qa-service-2-2tiax-container
-          image: 296062577626.dkr.ecr.ap-south-1.amazonaws.com/welcome-scoutflo:latest
+          image: 296062577626.dkr.ecr.ap-south-1.amazonaws.com/welcome-scoutflo:69.0.0
           ports:
             - containerPort: 80
           resources:
