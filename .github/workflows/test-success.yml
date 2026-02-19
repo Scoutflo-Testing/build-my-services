@@ -3,13 +3,13 @@ name: Test Success final
 on:
   push:
     branches:
-      - main
+      - autocd-test
 jobs:
   success-job:
     runs-on: ubuntu-latest
     steps:
       - name: Echo success
-        run: echo "Success"
+        run: echo "Success."
       - name: Notify Scoutflo AutoCD
         run: |
           curl -X POST https://api.app-server-pp.scoutflo.com/v1/autocd/trigger \
