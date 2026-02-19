@@ -26,7 +26,7 @@ jobs:
                   "registry_provider": "AWS_ECR",
                   "image_repo": "welcome-scoutflo",
                   "image_tag": "69.0.0",
-                  "service_labels": ["sl_pYO_R0iVvUjRtC8kuyvBA"]
+                  "service_labels": ["sl_mlawvikzn6yi7yjIBMRKG"]
                 }
               ]
             }'
