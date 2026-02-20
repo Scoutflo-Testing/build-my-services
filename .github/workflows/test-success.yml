@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
+
 jobs:
   success-job:
     runs-on: ubuntu-latest
+    # Skip if commit is from Scoutflo AutoCD (prevents feedback loop)
+    if: ${{ !contains(github.event.head_commit.message, 'Update image tag') }}
     steps:
       - name: Echo success
         run: echo "Success ✅"
